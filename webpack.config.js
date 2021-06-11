@@ -28,6 +28,7 @@ module.exports = {
          filename: "remoteEntry.js",
          exposes: {
             // './Component': './/src/app/app.component.ts',
+            //If we have different framework versions, we can expose web components:
             './web-components': './src/bootstrap.ts',
          },        
         
