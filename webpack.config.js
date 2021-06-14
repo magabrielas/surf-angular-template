@@ -10,7 +10,7 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "surfAngularTemplate",
-    publicPath: "http://localhost:4201/"
+    publicPath: "auto"
   },
   optimization: {
     runtimeChunk: false
