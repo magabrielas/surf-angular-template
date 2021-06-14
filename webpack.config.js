@@ -2,32 +2,33 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
 
-const sharedMappings = new mf.SharedMappings();
+/* const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
-  path.join(__dirname, 'tsconfig.json'),
-  [/* mapped paths to share */]);
+  path.join(__dirname, 'tsconfig.json'), */
+  //[/* mapped paths to share */]);
 
 module.exports = {
   output: {
     uniqueName: "surfAngularTemplate",
-    publicPath: "auto"
+    publicPath: "http://localhost:4201/"
   },
   optimization: {
     runtimeChunk: false
   },   
-  resolve: {
+ /*  resolve: {
     alias: {
       ...sharedMappings.getAliases(),
     }
-  },
+  }, */
   plugins: [
     new ModuleFederationPlugin({
       
         // For remotes (please adjust)
          name: "surfAngularTemplate",
+         library: { type: "var", name: "surfAngularTemplate" },
          filename: "remoteEntry.js",
          exposes: {
-            // './Component': './/src/app/app.component.ts',
+            // './SurfModule': './src/app/contact/contact.module.ts',
             //If we have different framework versions, we can expose web components:
             './web-components': './src/bootstrap.ts',
          },        
@@ -49,6 +50,6 @@ module.exports = {
         } */
         
     }),
-    sharedMappings.getPlugin()
+    //sharedMappings.getPlugin()
   ],
 };
