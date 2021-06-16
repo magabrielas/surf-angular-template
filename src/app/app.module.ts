@@ -8,10 +8,12 @@ import { ContactModule } from './contact/contact.module';
 
 import { createCustomElement } from '@angular/elements';
 import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
