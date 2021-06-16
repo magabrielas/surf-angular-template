@@ -31,7 +31,7 @@ export class AppModule {
 
   ngDoBootstrap() {
     const ce = createCustomElement(LayoutComponent, {injector: this.injector});
-    customElements.define('mfe1-dev-element', ce);
+    customElements.define('mfe1-element', ce);
 
   }
 }
