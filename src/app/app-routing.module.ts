@@ -5,12 +5,10 @@ import { LayoutComponent } from './layout/layout.component';
 const routes: Routes = [
 /*   {path:'', component: LayoutComponent}, 
  */
-  {path:'home',
+  {path:'surf/home',
    loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)},
 
-  { path:'', redirectTo:'home', pathMatch:'full' },
-
-  {path:'contact',
+  {path:'surf/contact',
    loadChildren:()=> import('./contact/contact.module').then(m=>m.ContactModule)}
   
 
