@@ -14,3 +14,9 @@ import { ContactComponent } from './components/contact/contact.component';
   ]
 })
 export class ContactModule { }
+/**
+ * { path:'home', component:HomeComponent},
+  { path:'', redirectTo:'home', pathMatch:'full'},
+  { path:'info', loadChildren:()=> import('./contact/contact.module').then(m=>m.ContactModule)},
+    
+ */

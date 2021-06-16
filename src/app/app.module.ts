@@ -2,18 +2,18 @@ import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { ContactModule } from './contact/contact.module';
 
-
 import { createCustomElement } from '@angular/elements';
-import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { LayoutComponent } from './layout/layout.component';
+import { AppComponent } from './app.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NavComponent
+    NavComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,8 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    const ce = createCustomElement(AppComponent, {injector: this.injector});
+    const ce = createCustomElement(LayoutComponent, {injector: this.injector});
     customElements.define('mfe1-element', ce);
+
   }
 }
